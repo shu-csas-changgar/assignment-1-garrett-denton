@@ -53,14 +53,9 @@ join language b on a.language_id = b.language_id
     
 -- 6 b.
 select 
-timestampdiff(day, a.rental_date, a.return_date) * c.rental_rate as Payment
-from rental a
-join inventory b on a.inventory_id = b.inventory_id
-	join film c on b.film_id = c.film_id
-		join customer d on a.customer_id = d.customer_id
-		where c.title = 'CLOSER BANG'
-		and d.first_name = 'PAULA'
-        and d.last_name = 'BRYANT';
+rental_rate as Payment
+from film
+where title = 'CLOSER BANG';
     
 -- 7.    
 select
